@@ -79,3 +79,10 @@ There are 3 ways to configure the beans in Spring-Boot
 
     - For annotaion base configuration we need to add @Component annotaion on the top of class, which we want
       to access as a bean.
+
+
+3. Java based configuration -
+
+    - We need to create bean-configuration class and annotate it using @Configuration annotaion.
+    - We can create the bean inside the bean-config file OR we can use the @ComponentScan annotaion
+      along with @Configuration annotaion so that spring automatically create the bean.

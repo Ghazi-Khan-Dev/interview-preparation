@@ -9,7 +9,8 @@ public class Main {
         ApplicationContext context
                 = new ClassPathXmlApplicationContext("spring.xml");
 
-        Staff staff = context.getBean(Teacher.class);
+        Teacher staff = context.getBean(Teacher.class);
         staff.work();
+        System.out.println(staff.getName());
     }
 }

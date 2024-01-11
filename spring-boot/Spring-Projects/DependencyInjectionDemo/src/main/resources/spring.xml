@@ -8,6 +8,8 @@
 
     <!-- bean definitions here -->
 
-    <bean id="teacher" class="org.example.Teacher"></bean>
+    <bean id="teacher" class="org.example.Teacher">
+        <property name="name" value="Ghazi"></property>
+    </bean>
 
 </beans>

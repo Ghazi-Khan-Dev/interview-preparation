@@ -127,3 +127,63 @@ There are 3 ways to configure the beans in Spring-Boot
     - To use the above annotaions, we need to add the the following dependency
 
         javax.annotation-api
+
+
+-----------------------------------------------------------------------------------------------------
+
+  Aspect oriented programming (AOP) -
+
+    - AOP is a methodology, by using it we can create the application.
+    - It helps to seperate out the cross-cutting concerns, from the main bussiness.
+    - Each cross-cutting concerns is know as aspect, for each cross-cutting concerns we have to create seperate aspect.
+    - The method define inside the aspect is called as point-cut.
+    - The methods from it should get called is called join-point-cut.
+    - For aspect we need to add the follwing dependencies -
+      - aspectjrt
+      - aspectjweaver
+
+    - We have to do the following things to design the aspect -
+
+      - Make a class aspect by adding the follwing annotaion
+        @Aspect       (will mark the class as aspect)
+        @Component    (will mark the class as bean)
+
+      - Use the follwing annotaion to mark the method as point-cut (available inside aspect)
+        @Before("execution(* org.demo.ShoppingCart.checkOut())")
+
+      - Enable the aspect by adding the follwong annotaion to Config class
+        @EnableAspectJAutoProxy
+
+      - We can create the point-cut and use them inside the @Before, @After annotaions,
+        e.g -
+
+          @Pointcut("within(org..*)")
+          public void authenticatingPointCut() {}
+
+          @Pointcut("within(org..*)")
+          public void authorizationPointCut(){}
+
+          @Before("authenticatingPointCut() && authorizationPointCut()")
+          public void authenticate() {
+              System.out.println("Authenticating the request ...");
+          }
+
+      - We can reveive the parameter inside the point-cut methods as well,
+        e.g -
+          @Before("execution(* org.demo.ShoppingCart.checkOut(..))")
+          public void BeforeLogger(JoinPoint joinPoint) {
+              Object[] args =  joinPoint.getArgs();
+              String status = args[0].toString();
+              System.out.println("args - " + status);
+              System.out.println("Before logger called");
+          }
+
+      - We can also use @AfterReturning annotaion,
+        e.g -
+          @Pointcut("execution(* org.demo.ShoppingCart.quantity(..))")
+          public void afterReturningPointCut(){}
+
+          @AfterReturning(pointcut = "afterReturningPointCut()", returning = "retVal")
+          public void afterReturning(int retVal) {
+              System.out.println("After returning " + retVal);
+          }

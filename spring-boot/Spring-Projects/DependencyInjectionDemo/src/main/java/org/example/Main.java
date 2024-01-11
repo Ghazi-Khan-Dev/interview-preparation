@@ -1,9 +1,15 @@
 package org.example;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 public class Main {
     public static void main(String[] args) {
 
-        Staff staff = new Teacher();
+        ApplicationContext context
+                = new ClassPathXmlApplicationContext("spring.xml");
+
+        Staff staff = context.getBean(Teacher.class);
         staff.work();
     }
 }

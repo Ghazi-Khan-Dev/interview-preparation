@@ -16,7 +16,11 @@ public class Main {
                 = new AnnotationConfigApplicationContext(BeanConfig.class);
 
         Principal principal = context.getBean(Principal.class);
-        principal.work();
+        principal.setAge(55);
+        System.out.println(principal.getAge());
+
+        Principal principal1 = context.getBean(Principal.class);
+        System.out.println(principal1.getAge());
 
 //        Teacher staff = context.getBean(Teacher.class);
 //        staff.work();

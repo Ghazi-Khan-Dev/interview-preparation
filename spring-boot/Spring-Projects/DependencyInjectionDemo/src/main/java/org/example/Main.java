@@ -13,9 +13,12 @@ public class Main {
 //                = new ClassPathXmlApplicationContext("spring.xml");
 
         ApplicationContext context
-                = new AnnotationConfigApplicationContext(Main.class);
+                = new AnnotationConfigApplicationContext(BeanConfig.class);
 
-        Teacher staff = context.getBean(Teacher.class);
-        staff.work();
+        Principal principal = context.getBean(Principal.class);
+        principal.work();
+
+//        Teacher staff = context.getBean(Teacher.class);
+//        staff.work();
     }
 }

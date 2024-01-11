@@ -103,4 +103,27 @@ There are 3 ways to configure the beans in Spring-Boot
 
         @Scope(scopeName="prototype")
 
+-----------------------------------------------------------------------------------------------------
 
+  Life Cycle of Bean -
+
+    - There are 7 different steps in life cycle of bean -
+
+        1. Defenation of Bean
+        2. Instantiation/Creation of bean process
+        3. Populate the property (set the default values, and add the Id, if provided to the Bean)
+        4. Post initialization
+        5. All the dependency will be injected and bean will be available in container
+        6. Pre destroy
+        7. Bean destroy
+
+    - There are couple of interface provided by spring to modify the property during bean life cycle,
+      BeanNameAware is one of the interface.
+    - There are few annotaions in which we can perform the post construction & pre destroy operations, the annotaions are as follows -
+
+        @PostConstruct (Generally use to pass the file path or to create new threads)
+        @PreDestroy (Generally use to close the DB connection, or close file or kill the threads)
+
+    - To use the above annotaions, we need to add the the following dependency
+
+        javax.annotation-api

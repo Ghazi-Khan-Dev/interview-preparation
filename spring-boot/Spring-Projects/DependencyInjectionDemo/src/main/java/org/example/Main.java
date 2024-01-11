@@ -19,8 +19,8 @@ public class Main {
         principal.setAge(55);
         System.out.println(principal.getAge());
 
-        Principal principal1 = context.getBean(Principal.class);
-        System.out.println(principal1.getAge());
+//        Principal principal1 = context.getBean(Principal.class);
+//        System.out.println(principal1.getAge());
 
 //        Teacher staff = context.getBean(Teacher.class);
 //        staff.work();

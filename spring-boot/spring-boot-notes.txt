@@ -81,8 +81,26 @@ There are 3 ways to configure the beans in Spring-Boot
       to access as a bean.
 
 
-3. Java based configuration -
+  3. Java based configuration -
 
     - We need to create bean-configuration class and annotate it using @Configuration annotaion.
     - We can create the bean inside the bean-config file OR we can use the @ComponentScan annotaion
       along with @Configuration annotaion so that spring automatically create the bean.
+
+-----------------------------------------------------------------------------------------------------
+
+  Scope of beans -
+
+    1. Singleton  (Default)
+    2. Prototype
+    3. Request
+    4. Session
+    5. GlobalSession
+
+    - By default scope of bean is Singleton.
+    - We can update the scope of bean using @Scope annotaion
+    - e.g
+
+        @Scope(scopeName="prototype")
+
+

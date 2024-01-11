@@ -13,6 +13,6 @@ public class Main {
         ShoppingCart shoppingCart =
                 context.getBean(ShoppingCart.class);
 
-        shoppingCart.checkOut();
+        shoppingCart.checkOut("success");
     }
 }

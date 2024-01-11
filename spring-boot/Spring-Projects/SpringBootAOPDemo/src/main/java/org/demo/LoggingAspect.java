@@ -9,12 +9,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class LoggingAspect {
 
-    @Before("execution(* org.demo.ShoppingCart.checkOut())")
+    @Before("execution(* org.demo.ShoppingCart.checkOut(..))")
     public void BeforeLogger() {
         System.out.println("Before logger called");
     }
 
-    @After("execution(* *.*.*.checkOut())")
+    @After("execution(* *.*.*.checkOut(..))")
     public void AfterLogger() {
         System.out.println("After logger called");
     }

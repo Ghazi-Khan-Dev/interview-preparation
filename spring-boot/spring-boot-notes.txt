@@ -75,4 +75,7 @@ There are 3 ways to configure the beans in Spring-Boot
         </bean>
 
 
-  2
+  2. Annotation based configuration -
+
+    - For annotaion base configuration we need to add @Component annotaion on the top of class, which we want
+      to access as a bean.

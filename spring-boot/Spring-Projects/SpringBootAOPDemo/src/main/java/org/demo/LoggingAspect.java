@@ -1,5 +1,6 @@
 package org.demo;
 
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
@@ -9,7 +10,14 @@ import org.springframework.stereotype.Component;
 public class LoggingAspect {
 
     @Before("execution(* org.demo.ShoppingCart.checkOut())")
-    public void logger() {
-        System.out.println("Logger called");
+    public void BeforeLogger() {
+        System.out.println("Before logger called");
     }
+
+    @After("execution(* *.*.*.checkOut())")
+    public void AfterLogger() {
+        System.out.println("After logger called");
+    }
+
+
 }

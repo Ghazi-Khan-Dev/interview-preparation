@@ -38,3 +38,41 @@ Sfotware requirements -
   MySQL server & Workbench
 
 -----------------------------------------------------------------------------------------------------
+
+
+There are 3 ways to configure the beans in Spring-Boot
+
+  1. XML based configuration
+  2. Annotation based configuration
+  3. Java based configuration
+
+    - To access the beans using ApplicationContext we need to add the following dependency in POM file.
+      spring-context
+
+    - There are 2 context available
+      1. BeanContext
+      2. ApplicationContext
+
+    - ApplicationContext extends the BeanContext & it provides more functionalities.
+
+
+  1. XML based configuration -
+
+    - We need to create the object of ApplicationContext using ClassPathXmlApplicationContext() class.
+    - We have to provide the name of xml file (which contains bean defenation) to ClassPathXmlApplicationContext class.
+    - Inside xml file we need to provide the namespace for the spring version we are using (spring-context)
+    - We can add the beans inside XMl file (setter base injection), as follows
+
+        <bean id="teacher" class="org.example.Teacher">
+          <property name="name" value="Ghazi"></property>
+          <property name="Address" ref="address">
+        </bean>
+
+    - We can also use constructor base injection, as follows
+
+        <bean id="teacher" class="org.example.Teacher">
+          <constructor-arg value="Ghazi"></constructor-arg>
+        </bean>
+
+
+  2

@@ -11,4 +11,9 @@ public class ShoppingCart {
         // Sanitize the data
         System.out.println("checkout is called..");
     }
+
+
+    public int quantity () {
+        return 111;
+    }
 }

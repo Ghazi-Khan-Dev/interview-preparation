@@ -14,5 +14,6 @@ public class Main {
                 context.getBean(ShoppingCart.class);
 
         shoppingCart.checkOut("success");
+        shoppingCart.quantity();
     }
 }

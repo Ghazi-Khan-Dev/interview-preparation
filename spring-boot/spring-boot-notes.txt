@@ -109,7 +109,7 @@ There are 3 ways to configure the beans in Spring-Boot
 
     - There are 7 different steps in life cycle of bean -
 
-        1. Defenation of Bean
+        1. Definition of Bean
         2. Instantiation/Creation of bean process
         3. Populate the property (set the default values, and add the Id, if provided to the Bean)
         4. Post initialization
@@ -187,3 +187,5 @@ There are 3 ways to configure the beans in Spring-Boot
           public void afterReturning(int retVal) {
               System.out.println("After returning " + retVal);
           }
+
+-----------------------------------------------------------------------------------------------------
